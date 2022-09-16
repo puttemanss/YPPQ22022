@@ -15,8 +15,124 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Vluchtid",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Vluchtid",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vluchtnr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Vluchtnr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Airlinecode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Airlinecode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Destcode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Destcode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vliegtuigcode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Vliegtuigcode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Datum",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Datum",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Vlucht",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"SQL_Schema": "raw",
+							"SQL_Table": "Vlucht"
+						}
+					}
+				]
 			}
 		],
 		"annotations": []
