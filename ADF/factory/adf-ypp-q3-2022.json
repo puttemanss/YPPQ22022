@@ -1,0 +1,9 @@
+{
+	"name": "adf-ypp-q3-2022",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1f097492-f942-4992-b6ea-87db954c54f6",
+		"tenantId": "4b6e6e7c-230d-43c3-aebf-690dddaaf3d4"
+	}
+}
