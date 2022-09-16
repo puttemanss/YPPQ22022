@@ -1,0 +1,28 @@
+{
+	"name": "TypeVliegtuig",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "export_typevliegtuig.csv",
+				"container": "files"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "IATA;ICAO;Merk;Type;Wake;Cat;Capaciteit;Vracht",
+				"type": "String"
+			}
+		]
+	}
+}
