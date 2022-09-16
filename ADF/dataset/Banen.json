@@ -13,7 +13,7 @@
 				"fileName": "export_banen.csv",
 				"container": "files"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
