@@ -13,8 +13,9 @@
 				"fileName": "export_planning.txt",
 				"container": "files"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
