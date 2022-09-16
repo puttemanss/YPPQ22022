@@ -1,0 +1,116 @@
+{
+	"name": "Vliegtuig",
+	"properties": {
+		"activities": [
+			{
+				"name": "Vliegtuig to db",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Airlinecode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Airlinecode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vliegtuigcode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Vliegtuigcode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Vliegtuigtype",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Vliegtuigtype",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Bouwjaar",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Bouwjaar",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Vliegtuig",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"SQL_Schema": "raw",
+							"SQL_Table": "Vliegtuig"
+						}
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

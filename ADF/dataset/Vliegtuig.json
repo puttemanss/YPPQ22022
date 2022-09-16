@@ -1,0 +1,28 @@
+{
+	"name": "Vliegtuig",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "export_vliegtuig.txt",
+				"container": "files"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Airlinecode\tVliegtuigcode\tVliegtuigtype\tBouwjaar",
+				"type": "String"
+			}
+		]
+	}
+}
