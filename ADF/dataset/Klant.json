@@ -13,7 +13,7 @@
 				"fileName": "export_klant.csv",
 				"container": "files"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
