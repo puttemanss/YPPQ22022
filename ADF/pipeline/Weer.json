@@ -1,0 +1,548 @@
+{
+	"name": "Weer",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_Weer_To_db",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Datum",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Datum",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DDVEC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DDVEC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FHVEC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FHVEC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FHX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FHX",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FHXH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FHXH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FHN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FHN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FHNH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FHNH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FXX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FXX",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FXXH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FXXH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TNH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TNH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TX",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TXH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TXH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "T10N",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "T10N",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "T10NH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "T10NH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SQ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SQ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Q",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Q",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RHX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RHX",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RHXH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RHXH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PX",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PXH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PXH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PNH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PNH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VVN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VVN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VVNH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VVNH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VVX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VVX",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VVXH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VVXH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UX",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UXH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UXH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UNH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UNH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EV2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EV2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Weer",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"SQL_Schema": "raw",
+							"SQL_Table": "Weer"
+						}
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
