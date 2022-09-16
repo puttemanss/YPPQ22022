@@ -1,0 +1,140 @@
+{
+	"name": "Planning",
+	"properties": {
+		"activities": [
+			{
+				"name": "Planning 2 DB",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Vluchtnr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Vluchtnr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Airlinecode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Airlinecode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Destcode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Destcode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Planterminal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Planterminal",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Plangate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Plangate",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Plantijd",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Plantijd",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Planning",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"SQL_Schema": "raw",
+							"SQL_Table": "Planning"
+						}
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
