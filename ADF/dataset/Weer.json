@@ -1,0 +1,28 @@
+{
+	"name": "Weer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "export_weer.txt",
+				"container": "files"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Datum\tDDVEC\tFHVEC\tFG\tFHX\tFHXH\tFHN\tFHNH\tFXX\tFXXH\tTG\tTN\tTNH\tTX\tTXH\tT10N\tT10NH\tSQ\tSP\tQ\tDR\tRH\tRHX\tRHXH\tPG\tPX\tPXH\tPN\tPNH\tVVN\tVVNH\tVVX\tVVXH\tNG\tUG\tUX\tUXH\tUN\tUNH\tEV2",
+				"type": "String"
+			}
+		]
+	}
+}
