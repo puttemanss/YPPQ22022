@@ -39,12 +39,36 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Name\tIATA\tICAO",
+									"name": "Name",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Name\tIATA\tICAO",
+									"name": "Name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IATA",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IATA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ICAO",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ICAO",
 									"type": "String",
 									"physicalType": "String"
 								}
