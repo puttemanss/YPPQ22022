@@ -29,7 +29,6 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE [raw].[Aankomst]",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate",
@@ -63,7 +62,7 @@
 				]
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "SP_Maatschappijen",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
@@ -82,7 +81,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[SP_Aankomst]"
+					"storedProcedureName": "[dbo].[SP_Maatschappijen]"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureSqlDatabase",
