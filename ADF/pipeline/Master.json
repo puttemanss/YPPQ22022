@@ -14,6 +14,26 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "Banen",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Aankomst",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Banen",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"annotations": []
