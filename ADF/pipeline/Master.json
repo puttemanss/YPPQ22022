@@ -22,7 +22,7 @@
 					{
 						"activity": "Aankomst",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -42,7 +42,7 @@
 					{
 						"activity": "Banen",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -62,7 +62,7 @@
 					{
 						"activity": "Klant",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -82,7 +82,7 @@
 					{
 						"activity": "Maatschappij",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -102,7 +102,7 @@
 					{
 						"activity": "Planning",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -122,7 +122,7 @@
 					{
 						"activity": "Vertrek",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -142,7 +142,7 @@
 					{
 						"activity": "Vliegtuig",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -162,7 +162,7 @@
 					{
 						"activity": "Vlucht",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -182,7 +182,7 @@
 					{
 						"activity": "Weer",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -202,7 +202,7 @@
 					{
 						"activity": "Luchthavens",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],

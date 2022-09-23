@@ -117,7 +117,7 @@
 					{
 						"activity": "Banen 2 DB",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
