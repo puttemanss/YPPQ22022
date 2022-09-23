@@ -28,7 +28,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "IF EXISTS [raw].[Weer] TRUNCATE [raw].[Weer]",
+						"preCopyScript": "IF EXISTS raw.Weer TRUNCATE raw.Weer",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate",
