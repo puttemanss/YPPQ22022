@@ -141,7 +141,7 @@
 					{
 						"activity": "Vlucht 2 DB",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
