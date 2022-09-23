@@ -118,7 +118,7 @@
 					{
 						"activity": "Klant 2 DB",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
