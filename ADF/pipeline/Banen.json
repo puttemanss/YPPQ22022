@@ -105,7 +105,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"SQL_Schema": "raw",
-							"SQL_Table": "Banen1"
+							"SQL_Table": "Banen"
 						}
 					}
 				]
