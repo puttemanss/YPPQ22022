@@ -109,6 +109,33 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Banen 2 DB",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[SP_Banen]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
