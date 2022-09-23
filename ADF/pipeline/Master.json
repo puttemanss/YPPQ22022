@@ -34,6 +34,186 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "Klant",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Banen",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Klant",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Maatschappij",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Klant",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Maatschappijen",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Planning",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Maatschappij",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Planning",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Vertrek",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Planning",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Vertrek",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Vliegtuig",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Vertrek",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Vliegtuig",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Vlucht",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Vliegtuig",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Vlucht",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Weer",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Vlucht",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Weer",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Luchthavens",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Weer",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "luchthavens",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "TypeVliegtuig",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Luchthavens",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "TypeVliegtuig",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"annotations": []
